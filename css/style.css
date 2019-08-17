@@ -1,0 +1,128 @@
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #333;
+	color: #1100ff;
+	overflow: hidden;
+}
+
+.container {
+	max-width: 70%;
+	height: 50vh;
+	margin: 150px auto 100px auto;
+	border: 2px solid #666;
+	overflow: hidden;
+	border-radius: 20%;
+	position: relative;
+}
+
+.clock {
+	height: auto;
+	margin: 50px 0 30px 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.clock > div {
+	padding: 10px;
+}
+
+.clock span,
+p {
+	font-size: 5rem;
+}
+
+/* buttons */
+.buttons {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 5px;
+	margin: 0 10px 10px 10px;
+}
+.buttons .btn {
+	padding: 10px 13px;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+}
+.buttons .btn:hover {
+	background-color: #444;
+}
+
+/* Lights */
+.circle-lights {
+	height: 10px;
+	width: 10px;
+	position: absolute;
+	border-radius: 50%;
+	animation: glow 1s infinite;
+}
+.red {
+	background-color: #ff0000;
+	top: 10px;
+	left: 46%;
+}
+.blue {
+	background-color: #0000ff;
+	top: 10px;
+	left: 50%;
+}
+.green {
+	background-color: #00ff00;
+	top: 10px;
+	left: 54%;
+}
+
+/* Animation */
+@keyframes glow {
+	50% {
+		transform: scale(1.2);
+	}
+}
+
+/* Media Query */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.container {
+		height: 40vh;
+	}
+	.clock {
+		margin: 150px 0 30px 0;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
+	.container {
+		height: 70vh;
+		margin: 50px auto 10px auto;
+	}
+	.clock {
+		margin: 50px 0 30px 0;
+	}
+}
+@media (min-width: 481px) and (max-width: 767px) {
+	.container {
+		height: 80%;
+	}
+}
+@media (min-width: 320px) and (max-width: 480px) {
+	.container {
+		max-width: 98%;
+	}
+	.clock span,
+	p {
+		font-size: 4rem;
+	}
+}
